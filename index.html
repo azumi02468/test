@@ -5,14 +5,14 @@
 たくちゃんのためのサイト
 </title>
 <style>
-div {
+#test {
 color:red;
 }
 </style>
 </head>
 <body>
 Hello World!
-<div>テーブルを作るよ</div>
+<div id="test">テーブルを作るよ</div>
 <table border="1">
 <tr><th>ID</th><th>参加者</th></tr>
 <tr><td>1</td><td>たくみ</td></tr>
@@ -20,6 +20,16 @@ Hello World!
 <tr><td>3</td><td>はじめ</td></tr>
 </table>
 <a href="https://www.google.com/">google行くよ</a>
+
+<script>
+var el = document.getElementById("test");
+el.addEventListener("mouseover",function(e){
+  e.target.style.color = "blue";
+})
+el.addEventListener("mouseout",function(e){
+  e.target.style.color = "red";
+})
+</script>
 
 </body>
 </html>
