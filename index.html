@@ -20,6 +20,9 @@ Hello World!
 <tr><td>3</td><td>はじめ</td></tr>
 </table>
 <a href="https://www.google.com/">google行くよ</a>
+<br />
+<input type="text" id="test2" placeholder="入力して" />
+<button id="button1">入力</button>
 
 <script>
 var el = document.getElementById("test");
@@ -28,6 +31,15 @@ el.addEventListener("mouseover",function(e){
 })
 el.addEventListener("mouseout",function(e){
   e.target.style.color = "red";
+})
+var btn1 = document.getElementById("button1");
+btn1.addEventListener("click",function(e){
+  var el2 = document.getElementById("test2").value;
+  if(el2 !== ""){
+    alert("あなたが入力した内容は："+el2)
+  } else {
+    alert("入力しろや");
+  }
 })
 </script>
 
