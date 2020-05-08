@@ -26,6 +26,8 @@ Hello World!
 
 <script>
 var el = document.getElementById("test");
+var el2 = document.getElementById("test2");
+
 el.addEventListener("mouseover",function(e){
   e.target.style.color = "blue";
 })
@@ -33,14 +35,20 @@ el.addEventListener("mouseout",function(e){
   e.target.style.color = "red";
 })
 var btn1 = document.getElementById("button1");
+
+var storage = localStorage;
+el2.value = storage.getItem("text");
+
 btn1.addEventListener("click",function(e){
-  var el2 = document.getElementById("test2").value;
-  if(el2 !== ""){
-    alert("あなたが入力した内容は："+el2)
+  var el2val = el2.value;
+  if(el2val !== ""){
+    alert("あなたが入力した内容は："+el2val);
+    storage.setItem("text", el2val);
   } else {
     alert("入力しろや");
   }
 })
+
 </script>
 
 </body>
